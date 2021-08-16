@@ -10,3 +10,10 @@ services:
       - WEBHOOK_URL=https://${DOMAIN_NAME}/${N8N_PATH}
     volumes:
       - ./data:/home/node/.n8n
+
+  tunnel:
+    image: cloudflare/cloudflared:2021.8.2
+    restart: always
+    volumes:
+      - ./cloudflared:/etc/cloudflared
+    command: tunnel --hostname ${DOMAIN_NAME} --url http://n8n:${N8N_PORT}
