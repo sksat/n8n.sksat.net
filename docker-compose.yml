@@ -12,7 +12,7 @@ services:
       - ./data:/home/node/.n8n
 
   tunnel:
-    image: cloudflare/cloudflared:2021.10.3
+    image: cloudflare/cloudflared:2021.10.4
     restart: always
     volumes:
       - ./cloudflared:/etc/cloudflared
