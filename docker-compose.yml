@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
   n8n:
-    image: n8nio/n8n:0.152.0
+    image: n8nio/n8n:0.153.0
     ports:
       - ${N8N_PORT}:${N8N_PORT}
     environment:
